@@ -1,0 +1,64 @@
+h1 {
+    font-size: 60px;
+    font-family: 'Rubik Mono One', sans-serif;
+    color: black;
+    text-align: center;
+    margin-top: 40px;
+}
+
+h3 {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 20px;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+body{
+	background: url("../images/popcorn.jpg") center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background-color: black; */
+    text-align: center;
+}
+* {
+	box-sizing: border-box;
+}
+img { 
+    height: 130px;
+    width: 220px;
+}
+.btn {
+    margin: 3px;
+    background-color: gainsboro;
+    color: black;
+    border-color: gainsboro;
+    border-radius: 0px;
+    box-shadow: 0 3px gray;
+}
+.gifDiv{
+    float: left;
+    margin: auto;
+    background-color: rgba(255, 255, 254, 0.4);
+    
+}
+
+.gifForm {
+    text-align: center;
+    position: relative;
+}
+.container {
+	padding: 20px;
+}
+
+
+.btn:hover {
+    background-color: goldenrod;
+    color: white;
+    border-color: gold;
+}
+.button:active {
+    background-color: goldenrod;
+    box-shadow: 0 5px darkgray;
+    transform: translateY(9px);
+}
