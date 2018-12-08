@@ -9,7 +9,7 @@ $(document).ready(function() {
     "Black Panther",
     "Ready Player One"
   ];
-  //
+  // Functions
   function displayMovieInfo() {
     var movie = $(this).attr("data-name");
     var queryURL =
@@ -22,7 +22,6 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(response) {
       $("#movies-view").text(JSON.stringify(response));
-      console.log(response);
 
       var gifResponse = response.data;
 
@@ -34,15 +33,16 @@ $(document).ready(function() {
         gifPreview.attr("data-animate", results[i].images.fixed_height.url);
         gifPreview.attr("data-state", "still");
 
-        var newItemdiv = $('<div class="newItem">');
-        var gifRated = response.data[i].Rated;
-        var divRating = $("<p>").text("Rating: " + gifRated);
+        // new div to display gif rating
+        var newDiv = $("<div>");
 
-        newItemdiv.append(divRating);
-        newItemdiv.append(dataImage);
+        var gifRated = response.data[i].Rated;
+        var gifRatedDisplay = $("<p>").text("Rating: " + gifRated);
+
+        newDiv.append(gifRatedDisplay);
+        newDiv.append(dataImage);
       }
     });
-    displayMovieInfo();
   }
   // create buttons
   function renderButtons() {
