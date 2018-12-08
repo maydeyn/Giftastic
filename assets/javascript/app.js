@@ -21,9 +21,8 @@ $(document).ready(function() {
       url: queryURL,
       method: "GET"
     }).then(function(response) {
-      $("#movies-view").text(JSON.stringify(response));
-
       var gifResponse = response.data;
+      var gifRating = gifResponse[i].rating;
 
       for (var i = 0; i < gifResponse.length; i++) {
         var gifPreview = $("<img>");
@@ -39,10 +38,9 @@ $(document).ready(function() {
         // new div to display gif rating
         var newDiv = $("<div>");
 
-        var gifRated = gifResponse.data[i].Rated;
-        var gifRatedDisplay = $("<p>").text("Rating: " + gifRated);
+        var gifRatingDisplay = $("<p>").text("Rating: " + gifRating);
 
-        newDiv.append(gifRatedDisplay);
+        newDiv.append(gifRatingDisplay);
       }
     });
   }
@@ -71,6 +69,7 @@ $(document).ready(function() {
 
   renderButtons();
 
+  //
   $("#gifsView").on("click", ".gif", function() {
     var state = $(this).attr("data-state");
     if (state === "still") {
