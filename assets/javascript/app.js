@@ -28,19 +28,21 @@ $(document).ready(function() {
       for (var i = 0; i < gifResponse.length; i++) {
         var gifPreview = $("<img>");
         gifPreview.addClass("gif");
-        gifPreview.attr("src", results[i].images.fixed_height_still.url);
-        gifPreview.attr("data-still", results[i].images.fixed_height_still.url);
-        gifPreview.attr("data-animate", results[i].images.fixed_height.url);
+        gifPreview.attr("src", gifResponse[i].images.fixed_height_still.url);
+        gifPreview.attr(
+          "data-still",
+          gifResponse[i].images.fixed_height_still.url
+        );
+        gifPreview.attr("data-animate", gifResponse[i].images.fixed_height.url);
         gifPreview.attr("data-state", "still");
 
         // new div to display gif rating
         var newDiv = $("<div>");
 
-        var gifRated = response.data[i].Rated;
+        var gifRated = gifResponse.data[i].Rated;
         var gifRatedDisplay = $("<p>").text("Rating: " + gifRated);
 
         newDiv.append(gifRatedDisplay);
-        newDiv.append(dataImage);
       }
     });
   }
